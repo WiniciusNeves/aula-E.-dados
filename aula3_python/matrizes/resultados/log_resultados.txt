@@ -1,0 +1,366 @@
+============================================================
+1) DEFINICAO DE MATRIZ
+============================================================
+Uma matriz A = [aij] de ordem m x n e uma tabela retangular com
+m linhas e n colunas, onde aij e o elemento da linha i e coluna j.
+
+A =
+[[1 2 3]
+ [4 5 6]]
+Ordem de A: 2 x 3
+a12 (linha 1, coluna 2) = 2
+a23 (linha 2, coluna 3) = 6
+
+Grafico salvo em: resultados/01_definicao.png
+
+============================================================
+2) OPERACOES COM MATRIZES
+============================================================
+A =
+[[2 3]
+ [1 0]]
+B =
+[[ 3  1]
+ [-1 -2]]
+
+A + B =
+[[ 5  4]
+ [ 0 -2]]
+
+A - B =
+[[-1  2]
+ [ 2  2]]
+
+A @ B (multiplicacao matricial) =
+[[ 3 -4]
+ [ 3  1]]
+
+A * B (elemento a elemento) =
+[[ 6  3]
+ [-1  0]]
+
+2.A (multiplicacao por escalar) =
+[[4 6]
+ [2 0]]
+
+Grafico salvo em: resultados/02_operacoes.png
+
+============================================================
+3) PROPRIEDADES DA ADICAO E MULTIPLICACAO POR ESCALAR
+============================================================
+A =
+[[1 2]
+ [3 4]]
+B =
+[[ 5 -1]
+ [ 0  2]]
+C =
+[[2 0]
+ [1 1]]
+a = 3, b = 2
+
+(a) A+B = B+A:  OK
+  lado esquerdo =
+[[6 1]
+ [3 6]]
+  lado direito  =
+[[6 1]
+ [3 6]]
+
+(b) A+(B+C) = (A+B)+C:  OK
+  lado esquerdo =
+[[8 1]
+ [4 7]]
+  lado direito  =
+[[8 1]
+ [4 7]]
+
+(c) (ab)A = a(bA):  OK
+  lado esquerdo =
+[[ 6 12]
+ [18 24]]
+  lado direito  =
+[[ 6 12]
+ [18 24]]
+
+(d) (a+b)A = aA+bA:  OK
+  lado esquerdo =
+[[ 5 10]
+ [15 20]]
+  lado direito  =
+[[ 5 10]
+ [15 20]]
+
+(e) (a-b)A = aA-bA:  OK
+  lado esquerdo =
+[[1 2]
+ [3 4]]
+  lado direito  =
+[[1 2]
+ [3 4]]
+
+(f) a(A+B) = aA+aB:  OK
+  lado esquerdo =
+[[18  3]
+ [ 9 18]]
+  lado direito  =
+[[18  3]
+ [ 9 18]]
+
+(g) a(A-B) = aA-aB:  OK
+  lado esquerdo =
+[[-12   9]
+ [  9   6]]
+  lado direito  =
+[[-12   9]
+ [  9   6]]
+
+
+============================================================
+4) TIPOS ESPECIAIS DE MATRIZES
+============================================================
+Nula:
+[[0. 0. 0.]
+ [0. 0. 0.]]
+  -> verificacao: True
+
+Linha:
+[[1 2 3]]
+  -> verificacao: True
+
+Coluna:
+[[1]
+ [2]
+ [3]]
+  -> verificacao: True
+
+Quadrada:
+[[1 2]
+ [3 4]]
+  -> verificacao: True
+
+Retangular:
+[[1 2 3]
+ [4 5 6]]
+  -> verificacao: True
+
+Diagonal:
+[[2 0 0]
+ [0 5 0]
+ [0 0 7]]
+  -> verificacao: True
+
+Identidade:
+[[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+  -> verificacao: True
+
+Triangular inferior:
+[[1 0 0]
+ [2 3 0]
+ [4 5 6]]
+  -> verificacao: True
+
+Triangular superior:
+[[1 2 3]
+ [0 4 5]
+ [0 0 6]]
+  -> verificacao: True
+
+Simetrica:
+[[1 2 3]
+ [2 4 5]
+ [3 5 6]]
+  -> verificacao: True
+
+Grafico salvo em: resultados/04_tipos_especiais.png
+
+============================================================
+5) MATRIZ TRANSPOSTA
+============================================================
+A (3x2) =
+[[2 3]
+ [1 4]
+ [5 6]]
+
+A^T (2x3) =
+[[2 1 5]
+ [3 4 6]]
+
+Grafico salvo em: resultados/05_transposta.png
+
+============================================================
+6) PROPRIEDADES DAS OPERACOES COM MATRIZES
+============================================================
+A =
+[[1 2]
+ [0 1]]
+B =
+[[2 0]
+ [1 3]]
+C =
+[[1 1]
+ [1 0]]
+
+a) A+B = B+A:  OK
+  lado esquerdo =
+[[3 2]
+ [1 4]]
+  lado direito  =
+[[3 2]
+ [1 4]]
+
+b) (A+B)+C = A+(B+C):  OK
+  lado esquerdo =
+[[4 3]
+ [2 4]]
+  lado direito  =
+[[4 3]
+ [2 4]]
+
+c) (AB)C = A(BC):  OK
+  lado esquerdo =
+[[10  4]
+ [ 4  1]]
+  lado direito  =
+[[10  4]
+ [ 4  1]]
+
+d) A(B+C) = AB+AC:  OK
+  lado esquerdo =
+[[7 7]
+ [2 3]]
+  lado direito  =
+[[7 7]
+ [2 3]]
+
+e) (A+B)C = AC+BC:  OK
+  lado esquerdo =
+[[5 3]
+ [5 1]]
+  lado direito  =
+[[5 3]
+ [5 1]]
+
+
+============================================================
+7) TRACO DA MATRIZ
+============================================================
+A =
+[[4 1 2]
+ [3 5 6]
+ [7 8 9]]
+Diagonal principal: [4, 5, 9]
+tr(A) = 4 + 5 + 9 = 18
+
+Grafico salvo em: resultados/07_traco.png (diagonal destacada em negrito)
+
+============================================================
+8) MATRIZ INVERSA (4x4)
+============================================================
+A =
+[[4. 1. 2. 1.]
+ [1. 5. 1. 2.]
+ [2. 1. 6. 1.]
+ [1. 2. 1. 7.]]
+det(A) = 572.0000
+
+A^-1 =
+[[ 0.3112 -0.035  -0.0944 -0.021 ]
+ [-0.035   0.2343 -0.0175 -0.0594]
+ [-0.0944 -0.0175  0.2028 -0.0105]
+ [-0.021  -0.0594 -0.0105  0.1643]]
+
+A . A^-1 (deve ser a identidade) =
+[[ 1.  0. -0.  0.]
+ [-0.  1.  0.  0.]
+ [ 0.  0.  1.  0.]
+ [-0. -0. -0.  1.]]
+E igual a identidade? True
+
+Grafico salvo em: resultados/08_inversa.png
+
+============================================================
+9) DETERMINANTE PELA REGRA DE SARRUS (3x3)
+============================================================
+A =
+[[1 2 3]
+ [0 4 5]
+ [1 0 6]]
+det(A) pela Regra de Sarrus = 22
+det(A) pelo numpy (conferencia) = 22.0000
+Resultados batem? True
+
+============================================================
+10) DETERMINANTE POR COFATORES (TEOREMA DE LAPLACE) - matriz 4x4
+============================================================
+A =
+[[1. 2. 3. 0.]
+ [0. 4. 5. 1.]
+ [1. 0. 6. 2.]
+ [2. 1. 0. 3.]]
+
+Expandindo pela primeira linha:
+det(A) = a11.C11 + a12.C12 + a13.C13 + a14.C14
+
+det(A) calculado por cofatores (implementacao manual) = 105.0000
+det(A) calculado pelo numpy (conferencia)              = 105.0000
+Resultados batem? True
+
+============================================================
+11) TESTE DE INVERSIBILIDADE (det(A) != 0)
+============================================================
+A (esperado: inversivel) =
+[[2. 0. 1. 0.]
+ [1. 3. 0. 1.]
+ [0. 1. 4. 2.]
+ [1. 0. 1. 5.]]
+  det = 120.000000   -> INVERSIVEL (nao singular)
+
+B (esperado: singular) =
+[[1. 2. 0. 1.]
+ [0. 1. 1. 2.]
+ [2. 4. 0. 2.]
+ [1. 1. 1. 1.]]
+  det = 0.000000   -> SINGULAR (nao inversivel)
+
+Grafico salvo em: resultados/11_teste_inversibilidade.png
+
+============================================================
+12) MATRIZ ADJUNTA (4x4)
+============================================================
+A =
+[[4. 1. 2. 1.]
+ [1. 5. 1. 2.]
+ [2. 1. 6. 1.]
+ [1. 2. 1. 7.]]
+det(A) = 572.0000
+
+Matriz de cofatores cof(A) =
+[[178. -20. -54. -12.]
+ [-20. 134. -10. -34.]
+ [-54. -10. 116.  -6.]
+ [-12. -34.  -6.  94.]]
+
+Matriz adjunta adj(A) = cof(A)^T =
+[[178. -20. -54. -12.]
+ [-20. 134. -10. -34.]
+ [-54. -10. 116.  -6.]
+ [-12. -34.  -6.  94.]]
+
+A^-1 = adj(A)/det(A) =
+[[ 0.3112 -0.035  -0.0944 -0.021 ]
+ [-0.035   0.2343 -0.0175 -0.0594]
+ [-0.0944 -0.0175  0.2028 -0.0105]
+ [-0.021  -0.0594 -0.0105  0.1643]]
+
+A^-1 pelo numpy (conferencia) =
+[[ 0.3112 -0.035  -0.0944 -0.021 ]
+ [-0.035   0.2343 -0.0175 -0.0594]
+ [-0.0944 -0.0175  0.2028 -0.0105]
+ [-0.021  -0.0594 -0.0105  0.1643]]
+Resultados batem? True
+
+Grafico salvo em: resultados/12_adjunta.png
+

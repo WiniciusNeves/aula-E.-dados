@@ -1,0 +1,55 @@
+============================================================
+1) DEFINICAO DE SISTEMA DE EQUACOES LINEARES
+============================================================
+Forma geral:  A.x = b
+
+Sistema:
+  2x + 3y = 7
+  x  -  y = 1
+
+Matriz dos coeficientes A =
+[[ 2  3]
+ [ 1 -1]]
+Vetor dos termos independentes b = (7.0, 1.0)
+Forma matricial: A.x = b, com x = [x, y]^T
+
+Solucao: x = 2.0000, y = 1.0000
+Verificacao: A.x = (7.0, 1.0)  (deve ser igual a b = (7.0, 1.0))
+
+============================================================
+2) CLASSIFICACAO DOS SISTEMAS LINEARES (SPD, SPI, SI)
+============================================================
+SPD: posto(A) = posto([A|b]) = numero de incognitas -> solucao unica
+SPI: posto(A) = posto([A|b]) < numero de incognitas -> infinitas solucoes
+SI : posto(A) != posto([A|b])                       -> nenhuma solucao
+
+--- Exemplos 2D ---
+SPD (retas concorrentes): A=[[2, 3], [1, -1]], b=[7, 1]  -> classificado como: SPD (possivel e determinado)
+SPI (retas coincidentes): A=[[1, 1], [2, 2]], b=[4, 8]  -> classificado como: SPI (possivel e indeterminado)
+SI (retas paralelas): A=[[1, 1], [1, 1]], b=[4, 6]  -> classificado como: SI (sistema impossivel)
+
+Grafico 2D salvo em: resultados/02_classificacao_2d.png
+
+--- Exemplos 3D ---
+SPD (planos se cruzam em um ponto): A=[[1, 1, 1], [2, 1, -1], [3, -1, 1]], b=[6, 1, 4]  -> classificado como: SPD (possivel e determinado)
+SPI (planos com reta comum): A=[[1, 1, 1], [1, -1, 1], [1, 0, 1]], b=[3, 1, 2]  -> classificado como: SPI (possivel e indeterminado)
+SI (planos paralelos contraditorios): A=[[1, 1, 1], [1, 1, 1], [2, -1, 1]], b=[3, 6, 4]  -> classificado como: SI (sistema impossivel)
+Grafico 3D salvo em: resultados/02_classificacao_3d.png
+
+============================================================
+3) EXEMPLOS DE SISTEMAS LINEARES EM 2D E 3D
+============================================================
+--- Exemplo 2D ---
+  2x + 3y = 7
+  x  -  y = 1
+Solucao: x = 2.0000, y = 1.0000
+Grafico salvo em: resultados/03_exemplo_2d.png
+
+--- Exemplo 3D ---
+  x + y + z = 6
+  2x + y - z = 1
+  3x - y + z = 4
+Solucao: x = 1.0000, y = 2.0000, z = 3.0000
+Verificacao: A.x = (6.0, 1.0, 4.0)  (deve ser igual a b = (6.0, 1.0, 4.0))
+Grafico salvo em: resultados/03_exemplo_3d.png
+

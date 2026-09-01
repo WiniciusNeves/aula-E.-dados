@@ -1,0 +1,87 @@
+============================================================
+1) DEFINICAO DE TRANSFORMACAO LINEAR
+============================================================
+T(x) = A.x, onde A e a matriz que representa a transformacao.
+
+Matriz A =
+[[2 0]
+ [0 1]]
+x = (3.0, 2.0)
+T(x) = A.x = (6.0, 2.0)
+
+Grafico salvo em: resultados/01_definicao.png
+
+============================================================
+2) EXPANSAO/CONTRACAO (SCALING)
+============================================================
+Matriz de escala M =
+[[2.  0. ]
+ [0.  0.5]]
+  sx = 2 (expande no eixo x)
+  sy = 0.5 (contrai no eixo y)
+
+Grafico salvo em: resultados/02_escala.png
+
+============================================================
+3) ROTACAO
+============================================================
+Angulo de rotacao: 45 graus
+Matriz de rotacao M =
+[[ 0.7071 -0.7071]
+ [ 0.7071  0.7071]]
+
+Grafico salvo em: resultados/03_rotacao.png
+
+============================================================
+4) CISALHAMENTO (SHEAR)
+============================================================
+Fator de cisalhamento k = 0.75
+Matriz de cisalhamento M =
+[[1.   0.75]
+ [0.   1.  ]]
+
+Grafico salvo em: resultados/04_cisalhamento.png
+
+============================================================
+5) REFLEXAO
+============================================================
+Reflexao em torno do eixo x: M =
+[[ 1  0]
+ [ 0 -1]]
+Reflexao em torno do eixo y: M =
+[[-1  0]
+ [ 0  1]]
+Reflexao em torno da origem: M =
+[[-1  0]
+ [ 0 -1]]
+
+Grafico salvo em: resultados/05_reflexao.png
+
+============================================================
+6) NUCLEO (KERNEL) E IMAGEM (IMAGE)
+============================================================
+A =
+[[1. 2.]
+ [2. 4.]]
+posto(A) = 1  (A e uma matriz 2x2 com posto 1, logo nao e injetora)
+
+Direcao do nucleo (Ker(T)): (-0.8944, 0.4472)
+Verificacao: A . (nucleo) = (0.0, 0.0)  (deve ser ~ (0,0))
+
+Direcao da imagem (Im(T)): (-0.4472, -0.8944)
+
+Grafico salvo em: resultados/06_nucleo_imagem.png
+
+============================================================
+7) PROPRIEDADES DE TRANSFORMACAO LINEAR
+============================================================
+A =
+[[2 1]
+ [0 3]]
+u = (1.0, 2.0)   v = (3.0, -1.0)   alpha = 2.5
+
+a) T(u+v) = (9.0, 3.0)   T(u)+T(v) = (9.0, 3.0)   -> OK
+b) T(alpha.u) = (10.0, 15.0)   alpha.T(u) = (10.0, 15.0)   -> OK
+
+Grafico salvo em: resultados/07_propriedades.png
+

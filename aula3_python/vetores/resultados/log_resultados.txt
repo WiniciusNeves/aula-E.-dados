@@ -1,0 +1,138 @@
+============================================================
+1) DEFINICAO DE VETOR
+============================================================
+Um vetor v em R^n e uma n-upla ordenada de numeros reais:
+    v = (x1, x2, ..., xn)
+Geometricamente, representa uma grandeza com modulo, direcao e
+sentido, desenhada como uma seta da origem ate o ponto (x1,...,xn).
+
+Exemplo em R2: v = (4.0, 3.0)
+  modulo (norma) = 5.0000
+  direcao (angulo com o eixo x) = 36.87 graus
+
+Grafico salvo em: resultados/01_definicao.png
+
+============================================================
+2) VETORES NO ESPACO VETORIAL 2D E 3D
+============================================================
+Vetor v (R2)  = (3.0, 4.0)  -> nomenclatura: v = (x, y)
+Vetor w (R3)  = (2.0, -1.0, 3.0)  -> nomenclatura: w = (x, y, z)
+
+Vetores unitarios (versores) usados para nomear componentes:
+  R2: i = (1, 0), j = (0, 1)          -> v = x.i + y.j
+  R3: i = (1, 0, 0), j = (0, 1, 0), k = (0, 0, 1) -> w = x.i + y.j + z.k
+
+Grafico salvo em: resultados/02_vetores_2d_3d.png
+
+============================================================
+3) OPERACOES COM VETORES
+============================================================
+u = (2.0, 3.0)
+v = (4.0, -1.0)
+u + v (soma)                       = (6.0, 2.0)
+u - v (subtracao)                  = (-2.0, 4.0)
+u * v (mult. elemento a elemento)  = (8.0, -3.0)
+u / v (div. elemento a elemento)   = (0.5, -3.0)
+2.u (multiplicacao por escalar)    = (4.0, 6.0)
+
+Grafico salvo em: resultados/03_operacoes.png
+
+============================================================
+4) NORMA DO VETOR (2D E 3D)
+============================================================
+A norma de v = (x1, ..., xn) e definida por:
+    |v| = sqrt(x1^2 + x2^2 + ... + xn^2)
+
+v (R2) = (3.0, 4.0)   |v| = 5.0000
+  vetor unitario (versor) na direcao de v: (0.6, 0.8)
+
+w (R3) = (1.0, 2.0, 2.0)   |w| = 3.0000
+  vetor unitario (versor) na direcao de w: (0.3333, 0.6667, 0.6667)
+
+Grafico salvo em: resultados/04_norma.png
+
+============================================================
+5) PRODUTO ESCALAR (DOT PRODUCT)
+============================================================
+u = (3.0, 1.0)
+v = (1.0, 3.0)
+u . v = 6
+|u| = 3.1623   |v| = 3.1623
+cos(theta) = 0.6000
+Angulo entre u e v = 53.13 graus
+
+Grafico salvo em: resultados/05_produto_escalar.png
+
+============================================================
+6) PRODUTO VETORIAL (CROSS PRODUCT)
+============================================================
+u = (2.0, 0.0, 0.0)
+v = (0.0, 2.0, 0.0)
+u x v = (0.0, 0.0, 4.0)
+(u x v) . u = 0  (perpendicular a u)
+(u x v) . v = 0  (perpendicular a v)
+|u x v| = 4.0000  (area do paralelogramo formado por u e v)
+
+Grafico salvo em: resultados/06_produto_vetorial.png
+
+============================================================
+7) COMBINACAO LINEAR: w = a.v + b.u
+============================================================
+v = (1.0, 0.0)   u = (0.0, 1.0)
+escalares: a = 3, b = 2
+w = a.v + b.u = 3.(1.0, 0.0) + 2.(0.0, 1.0) = (3.0, 2.0)
+
+Grafico salvo em: resultados/07_combinacao_linear.png
+
+============================================================
+8) VETORES LINEARMENTE INDEPENDENTES (LI) x DEPENDENTES (LD)
+============================================================
+Vetores sao LI quando a unica combinacao a.v1 + b.v2 = 0 e a=b=0.
+Isso equivale a det([v1, v2]) != 0 (matriz de posto completo).
+
+Caso A (colineares):
+  v1 = (2.0, 1.0)   v2 = (4.0, 2.0)
+  det = 0.0000   posto(rank) = 1   -> LD
+
+Caso B (nao colineares):
+  v1 = (2.0, 1.0)   v2 = (1.0, 3.0)
+  det = 5.0000   posto(rank) = 2   -> LI
+
+Grafico salvo em: resultados/08_dependencia_linear.png
+
+============================================================
+9) BASE DE VETORES (conjunto minimo que gera o espaco)
+============================================================
+Base canonica do R2: {e1, e2} = {(1,0), (0,1)}
+Exemplo: v = (3.0, 2.0) = 3.e1 + 2.e2
+
+Base canonica do R3: {i, j, k} = {(1,0,0), (0,1,0), (0,0,1)}
+Exemplo: w = (2.0, -1.0, 3.0) = 2.i + -1.j + 3.k
+
+Base alternativa (nao canonica) do R2: {b1, b2} = {(1,1), (1,-1)}
+  v = 2.50.b1 + 0.50.b2
+
+Grafico salvo em: resultados/09_base_vetores.png
+
+============================================================
+10) PROPRIEDADES DE SOMA E MULTIPLICACAO DE VETORES
+============================================================
+(a) Comutativa:  u+v = (3.0, 4.0)   v+u = (3.0, 4.0)   -> OK
+(b) Elemento oposto:  u+(-u) = (0.0, 0.0)   -> OK
+(c) Associativa:  (u+v)+w = (2.0, 6.0)   u+(v+w) = (2.0, 6.0)   -> OK
+(d) Elemento neutro:  u+0 = (2.0, 1.0)   -> OK
+
+Grafico salvo em: resultados/10_propriedades.png
+
+============================================================
+11) ORTOGONALIDADE DE VETORES
+============================================================
+Dois vetores u e v sao ortogonais (perpendiculares) se e somente
+se u . v = 0.
+
+u = (3.0, 2.0)
+v1 = (-2.0, 3.0)   u.v1 = 0   -> ORTOGONAIS
+v2 = (1.0, 1.0)   u.v2 = 5   -> NAO ORTOGONAIS
+
+Grafico salvo em: resultados/11_ortogonalidade.png
+
